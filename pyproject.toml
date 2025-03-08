@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "descomplicando-qdrant"
+version = "0.1.0"
+description = "Projeto com documentação abordando todas as funcionalidades de um banco de dados vetorial conceitualmente e neste caso todo o QDrant."
+authors = ["Airton Lira Junior <airtonlirajr@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+qdrant-client = "^1.13.2"
+langchain = "^0.3.20"
+langchain-community = "^0.3.19"
+python-dotenv = "^1.0.1"
+openai = "^1.65.2"
+pandas = "^2.2.3"
+tiktoken = "^0.9.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
