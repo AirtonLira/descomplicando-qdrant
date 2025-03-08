@@ -55,16 +55,19 @@ pip install pandas qdrant-client langchain openai python-dotenv
 
 O projeto utiliza Qdrant para armazenamento vetorial e busca semântica:
 
+```
 client = QdrantClient(host="localhost", port=6333)
 client.create_collection(
     collection_name="descomplicando_qdrant_tickets",
     vectors_config=VectorParams(size=1536, distance=Distance.COSINE),
 )
+```
 
 ### Sistema de Perguntas e Respostas
 
 O projeto implementa um sistema de Q&A utilizando LangChain e OpenAI:
 
+```
 def qa_system(pergunta):
     resultado = qa({
         "query": pergunta
@@ -73,17 +76,21 @@ def qa_system(pergunta):
         "resposta": resultado["result"],
         "fontes": resultado["source_documents"]
     }
-
+```
 ### Como Usar
 
 1. Carregue o dataset:
+```
 texto_chunks = quebrar_csv_helpdesk("customer_support_tickets.csv")
 vectorstore.add_documents(texto_chunks)
+```
 
 2. Faça perguntas sobre os dados:
-pergunta = "Qual é a porcentagem de status de cada ticket?"
+```
+pergunta = "What percentage is the status of each ticket? return in percentage"
 resultado = qa_system(pergunta)
 print(resultado["resposta"])
+```
 
 ### Exemplos de Análises
 
@@ -103,13 +110,9 @@ Para contribuir com o projeto:
 3. Faça commit das alterações
 4. Envie um pull request
 
-### Licença
-
-Este projeto está sob a licença MIT.
-
 ### Contato
 
-Para dúvidas ou sugestões, abra uma issue no repositório do projeto.
+Meu Linkedln: https://www.linkedin.com/in/airton-lira-junior-6b81a661/
 
 ### Agradecimentos
 
